@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending - FitWear | Sportswear & Fitness Store</title>
+    <meta name="description" content="Discover the hottest trending sportswear and fitness products at FitWear. Shop the latest styles and best sellers.">
+    
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="fitwear.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>FitWear</h1>
+                        <span class="tagline">Fitness Store</span>
+                    </a>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="products.html" class="nav-link">Products</a></li>
+                        <li><a href="trending.html" class="nav-link active">Trending</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-toggle" id="searchToggle">
+                        <i data-feather="search"></i>
+                    </button>
+                    <button class="cart-toggle" id="cartToggle">
+                        <i data-feather="shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-bar" id="searchBar">
+                <div class="search-input-container">
+                    <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+                    <button class="search-btn" id="searchBtn">
+                        <i data-feather="search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Trending Now</h1>
+            <p class="page-subtitle">Discover the hottest products and latest fitness trends</p>
+        </div>
+    </section>
+
+    <!-- Trending Stats -->
+    <section class="trending-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i data-feather="trending-up"></i>
+                    <h3>12</h3>
+                    <p>Trending Products</p>
+                </div>
+                <div class="stat-card">
+                    <i data-feather="star"></i>
+                    <h3>4.8</h3>
+                    <p>Average Rating</p>
+                </div>
+                <div class="stat-card">
+                    <i data-feather="shopping-bag"></i>
+                    <h3>1.2K</h3>
+                    <p>Sales This Week</p>
+                </div>
+                <div class="stat-card">
+                    <i data-feather="percent"></i>
+                    <h3>25%</h3>
+                    <p>Average Discount</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Categories -->
+    <section class="trending-categories">
+        <div class="container">
+            <h2 class="section-title">Popular Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="clothing">
+                    <div class="category-icon">
+                        <i data-feather="shirt"></i>
+                    </div>
+                    <h3>Athletic Clothing</h3>
+                    <p>Premium workout apparel for peak performance</p>
+                    <button class="category-btn" onclick="window.location.href='products.html'">Shop Now</button>
+                </div>
+                <div class="category-card" data-category="shoes">
+                    <div class="category-icon">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+                    <h3>Sports Shoes</h3>
+                    <p>High-performance footwear for every sport</p>
+                    <button class="category-btn" onclick="window.location.href='products.html'">Shop Now</button>
+                </div>
+                <div class="category-card" data-category="equipment">
+                    <div class="category-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Gym Equipment</h3>
+                    <p>Professional fitness equipment for home and gym</p>
+                    <button class="category-btn" onclick="window.location.href='products.html'">Shop Now</button>
+                </div>
+                <div class="category-card" data-category="accessories">
+                    <div class="category-icon">
+                        <i data-feather="watch"></i>
+                    </div>
+                    <h3>Accessories</h3>
+                    <p>Essential fitness accessories and wearables</p>
+                    <button class="category-btn" onclick="window.location.href='products.html'">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Products -->
+    <section class="trending-products">
+        <div class="container">
+            <h2 class="section-title">Trending Products</h2>
+            <div class="trending-grid" id="trendingGrid">
+                <!-- Trending products will be loaded here -->
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <button class="btn btn-primary" onclick="window.location.href='products.html'">
+                    View All Products
+                    <i data-feather="arrow-right" style="margin-left: 0.5rem;"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated with Latest Trends</h2>
+                <p>Subscribe to our newsletter and be the first to know about new arrivals and exclusive offers</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">
+                <i data-feather="x"></i>
+            </button>
+        </div>
+        
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be loaded here -->
+            </div>
+            
+            <div class="cart-empty" id="cartEmpty">
+                <i data-feather="shopping-cart"></i>
+                <p>Your cart is empty</p>
+                <button class="shop-now-btn" onclick="closeCart(); window.location.href='products.html'">Shop Now</button>
+            </div>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <div class="total-row">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">$0.00</span>
+                </div>
+                <div class="total-row">
+                    <span>Shipping:</span>
+                    <span id="cartShipping">Free</span>
+                </div>
+                <div class="total-row total-final">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>FitWear</h4>
+                    <p>Premium sportswear and fitness equipment for athletes worldwide.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="trending.html">Trending</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i data-feather="phone"></i> 9999999999</li>
+                        <li><i data-feather="mail"></i> info@fitware.com</li>
+                        <li><i data-feather="map-pin"></i> S.v.arts college,<br> balaji colony,tirupati</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitWear. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="fitwear.js"></script>
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Initialize app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            // Load only trending products
+            renderTrendingProducts();
+        });
+
+        // Newsletter form handling
+        document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('.newsletter-input').value;
+            showToast('Subscribed!', 'Thank you for subscribing to our newsletter', 'success');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
